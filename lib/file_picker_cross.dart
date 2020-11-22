@@ -141,8 +141,13 @@ class FilePickerCross {
     return parsedPath.substring(0, parsedPath.lastIndexOf('/'));
   }
 
-  /// Returns a sting containing the file contents of plain text files. Please use it in a try {} catch (e) {} block if you are unsure if the opened file is plain text.
+  /// Returns a string containing the file contents of plain text files. Please use it in a try {} catch (e) {} block if you are unsure if the opened file is plain text.
   String toString() => Utf8Codec().decode(_bytes);
+
+  /// Returns a string containing the file contents as hex.
+  String toHexString() {
+    return _bytes.join();
+  }
 
   /// Returns the file as a list of bytes.
   Uint8List toUint8List() => _bytes;
